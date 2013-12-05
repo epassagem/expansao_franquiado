@@ -1,0 +1,61 @@
+<h1>Listing doc_fiscais</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rg</th>
+      <th>Cpf</th>
+      <th>Serasa</th>
+      <th>Fpc</th>
+      <th>Bens imob</th>
+      <th>Imposto renda pf</th>
+      <th>Imposto renda pj</th>
+      <th>Comprovante resid</th>
+      <th>Certidao casamento</th>
+      <th>Socio rg</th>
+      <th>Socio cpf</th>
+      <th>Socio serasa</th>
+      <th>Socio fpc</th>
+      <th>Socio bens imob</th>
+      <th>Socio imposto renda pf</th>
+      <th>Socio imposto renda pj</th>
+      <th>Socio comprovante resid</th>
+      <th>Socio certidao casamento</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @doc_fiscais.each do |doc_fiscai| %>
+      <tr>
+        <td><%= doc_fiscai.rg %></td>
+        <td><%= doc_fiscai.cpf %></td>
+        <td><%= doc_fiscai.serasa %></td>
+        <td><%= doc_fiscai.fpc %></td>
+        <td><%= doc_fiscai.bens_imob %></td>
+        <td><%= doc_fiscai.imposto_renda_pf %></td>
+        <td><%= doc_fiscai.imposto_renda_pj %></td>
+        <td><%= doc_fiscai.comprovante_resid %></td>
+        <td><%= doc_fiscai.certidao_casamento %></td>
+        <td><%= doc_fiscai.socio_rg %></td>
+        <td><%= doc_fiscai.socio_cpf %></td>
+        <td><%= doc_fiscai.socio_serasa %></td>
+        <td><%= doc_fiscai.socio_fpc %></td>
+        <td><%= doc_fiscai.socio_bens_imob %></td>
+        <td><%= doc_fiscai.socio_imposto_renda_pf %></td>
+        <td><%= doc_fiscai.socio_imposto_renda_pj %></td>
+        <td><%= doc_fiscai.socio_comprovante_resid %></td>
+        <td><%= doc_fiscai.socio_certidao_casamento %></td>
+        <td><%= link_to 'Show', doc_fiscai %></td>
+        <td><%= link_to 'Edit', edit_doc_fiscai_path(doc_fiscai) %></td>
+        <td><%= link_to 'Destroy', doc_fiscai, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Doc fiscai', new_doc_fiscai_path %>

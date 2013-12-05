@@ -1,0 +1,10 @@
+class CreateCarta < ActiveRecord::Migration
+  def change
+    create_table :carta do |t|
+      t.string :arquivo
+      t.boolean :status
+
+      t.timestamps
+    end
+  end
+end

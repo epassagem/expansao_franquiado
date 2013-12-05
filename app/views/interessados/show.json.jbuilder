@@ -1,0 +1,1 @@
+json.extract! @interessado, :id, :nome, :cpf, :rg, :data_nasc, :estado_civil, :regime_bens, :renda, :sera_admin, :dispon_integral, :quem_sera_admin, :resumo_prof, :manifesto_pos, :email, :created_at, :updated_at

@@ -1,0 +1,68 @@
+<%= simple_form_for(@doc_fiscai) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <label>RG</label>
+    <%= f.file_field :rg %>
+
+    <label>CPF</label>
+    <%= f.file_field :cpf %>
+
+    <label>Serasa</label>
+    <%= f.file_field :serasa %>
+
+    <label>FPC</label>
+    <%= f.file_field :fpc %>
+
+    <label>Bens Imobiliários</label>
+    <%= f.file_field :bens_imob %>
+
+    <label>Imposto de Renda Pessoa Física</label>
+    <%= f.file_field :imposto_renda_pf %>
+
+    <label>Imposto de Renda Pessoa Juridica</label>
+    <%= f.file_field :imposto_renda_pj %>
+    
+    <label>Comprovante Residência</label>
+    <%= f.file_field :comprovante_resid %>
+
+    <label>Certidão de Casamento</label>
+    <%= f.file_field :certidao_casamento %>
+
+    <label>Rg Sócio</label>
+    <%= f.file_field :socio_rg %>
+
+    <label>CPF Sócio</label>
+    <%= f.file_field :socio_cpf %>
+
+    <label>Serasa Sócio</label>
+    <%= f.file_field :socio_serasa %>
+
+    <label>FPC Sócio</label>
+    <%= f.file_field :socio_fpc %>
+
+    <label>Bens Imobiliários Sócio</label>
+    <%= f.file_field :socio_bens_imob %>
+
+    <label>Imposto de Renda Pessoa Física</label>
+    <%= f.file_field :socio_imposto_renda_pf %>
+
+    <label>Imposto de Renda Pessoa Juridica</label>
+    <%= f.file_field :socio_imposto_renda_pj %>
+
+    <label>Comprovante Residência Sócio</label>
+    <%= f.file_field :socio_comprovante_resid %>
+
+    <label>Certidão Casamento Sócio</label>
+    <%= f.file_field :socio_certidao_casamento %>
+
+  </div>
+  <div class="form-inputs">
+    <%= f.file_field :rg %>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

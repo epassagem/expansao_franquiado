@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  cpf: 1
+  rg: 1
+  data_nasc: 2013-12-04
+  estado_civil: MyString
+  regime_bens: MyString
+  renda: MyString
+  sera_admin: MyString
+  dispon_integral: MyString
+  quem_sera_admin: MyString
+  resumo_prof: MyString
+  manifesto_pos: MyString
+  email: MyString
+
+two:
+  nome: MyString
+  cpf: 1
+  rg: 1
+  data_nasc: 2013-12-04
+  estado_civil: MyString
+  regime_bens: MyString
+  renda: MyString
+  sera_admin: MyString
+  dispon_integral: MyString
+  quem_sera_admin: MyString
+  resumo_prof: MyString
+  manifesto_pos: MyString
+  email: MyString

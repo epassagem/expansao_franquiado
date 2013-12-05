@@ -1,0 +1,105 @@
+<div class="row">
+
+<%= simple_form_for(@interessado) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nome %>
+    <%= f.input :cpf %>
+    <%= f.input :rg %>
+    <%= f.input :data_nasc %>
+    <%= f.input :estado_civil %>
+    <%= f.input :regime_bens %>
+    <%= f.input :renda %>
+    <%= f.input :sera_admin %>
+    <%= f.input :dispon_integral %>
+    <%= f.input :quem_sera_admin %>
+    <%= f.input :resumo_prof %>
+    <%= f.input :manifesto_pos %>
+    <%= f.input :email %>
+  
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#etapa1">
+          <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 1</h4>
+        </a>
+      </h4>
+    </div>
+    <div id="etapa1" class="panel-collapse collapse">
+     <div class="panel-body">
+          <label>Carta de Intenção</label>
+	  <div class="row">
+            <% @interessado.cartum.each do |s| %>
+              <div class="col-xs-3">
+                <div class="thumbnail" style="height:380px;">
+                    <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+		    <div class="caption">
+	              <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		      <input type="checkbox" ><%= s.status %></input>
+                    </div>
+	          </div>
+	        </div>
+              <% end %> 
+            </div>           
+       </div>
+	 <div class="panel-body">
+	  <label>RG</label>
+	  <div class="row">
+            <% @interessado.doc_fiscais.each do |s| %>
+              <div class="col-xs-3">
+                <div class="thumbnail" style="height:380px;">
+                    <%= image_tag s.rg.to_s, :class =>"thumbnail" %> 
+		    <div class="caption">
+	              <%= link_to ' baixar',  s.rg.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		      <input type="checkbox" ><%= s.status %></input>
+                    </div>
+	          </div>
+	        </div>
+              <% end %> 
+            </div>           
+          </div>
+    </div>
+    
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#cartum">
+          <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 2</h4>
+        </a>
+      </h4>
+    </div>
+    <div id="cartum" class="panel-collapse collapse">
+      <div class="panel-body">
+          <%= f.association :cartum, as: :check_boxes, label_method: :status, value_method: :id, include_blank: false %>
+	    <div class="row">
+          	<% @interessado.cartum.each do |s| %>
+           	  <div class="col-xs-3">
+              	    <div class="thumbnail" style="height:380px;">
+                      <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+		      <div class="caption">
+	                <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		        <input type="checkbox" ><%= s.status %></input>
+                      </div>
+	            </div>
+	          </div>
+                <% end %> 
+             </div>           
+       </div>       
+     </div>
+</div>
+
+
+
+
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @cartum.arquivo %>
+    </br>
+  <%= link_to 'download', @cartum.arquivo_url.to_s %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @cartum.status %>
+</p>
+
+<%= link_to 'Edit', edit_cartum_path(@cartum) %> |
+<%= link_to 'Back', carta_path %>

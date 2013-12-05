@@ -1,0 +1,14 @@
+<h1>Editing interessado</h1>
+
+<%= render 'form' %>
+<p>
+  <strong>Status</strong>
+  <% @interessado.cartum.each do |t| %>
+    <td><%= t.status,  as: :radio_buttons%></td>
+    <td><%= image_tag t.arquivo %></td>
+  <% end %>
+</p>
+
+
+<%= link_to 'Show', @interessado %> |
+<%= link_to 'Back', interessados_path %>

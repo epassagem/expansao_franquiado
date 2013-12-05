@@ -1,0 +1,10 @@
+class CreateEtapas < ActiveRecord::Migration
+  def change
+    create_table :etapas do |t|
+      t.string :nome
+      t.string :procedimento
+
+      t.timestamps
+    end
+  end
+end

@@ -1,0 +1,4 @@
+class Procedimento < ActiveRecord::Base
+    belongs_to :etapa
+  
+end

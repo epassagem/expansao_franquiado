@@ -1,0 +1,4 @@
+class DocFiscai < ActiveRecord::Base
+  mount_uploader :rg, DocFiscaiUploader
+  belongs_to :interessado, autosave: true
+end

@@ -1,0 +1,2 @@
+class ProjetoArquitetonico < ActiveRecord::Base
+end

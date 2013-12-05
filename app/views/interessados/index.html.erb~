@@ -1,0 +1,57 @@
+<h1>Listing interessados</h1>
+
+<%= will_paginate @interessados %>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Rg</th>
+      <th>Data nasc</th>
+      <th>Estado civil</th>
+      <th>Regime bens</th>
+      <th>Renda</th>
+      <th>Sera admin</th>
+      <th>Dispon integral</th>
+      <th>Quem sera admin</th>
+      <th>Resumo prof</th>
+      <th>Manifesto pos</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @interessados.each do |interessado| %>
+      <tr>
+        <td><%= interessado.nome %></td>
+        <td><%= interessado.cpf %></td>
+        <td><%= interessado.rg %></td>
+        <td><%= interessado.data_nasc %></td>
+        <td><%= interessado.estado_civil %></td>
+        <td><%= interessado.regime_bens %></td>
+        <td><%= interessado.renda %></td>
+        <td><%= interessado.sera_admin %></td>
+        <td><%= interessado.dispon_integral %></td>
+        <td><%= interessado.quem_sera_admin %></td>
+        <td><%= interessado.resumo_prof %></td>
+        <td><%= interessado.manifesto_pos %></td>
+        <td><%= interessado.email %></td>
+    <% interessado.cartum.each do |t| %>
+	<td><%= t.status %></td>
+	<% end %>
+        <td><%= link_to 'Show', interessado %></td>
+        <td><%= link_to 'Edit', edit_interessado_path(interessado) %></td>
+        <td><%= link_to 'Destroy', interessado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Interessado', new_interessado_path %>

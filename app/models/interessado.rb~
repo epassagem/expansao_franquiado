@@ -1,0 +1,7 @@
+class Interessado < ActiveRecord::Base
+ self.per_page = 2
+ has_many :cartum, autosave: true
+ has_many :doc_fiscais, autosave: true
+ has_many :projeto_arquitetonico, autosave: true
+ accepts_nested_attributes_for :cartum
+end

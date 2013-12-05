@@ -1,0 +1,27 @@
+<h1>Listing projeto_arquitetonicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projeto_arquitetonicos.each do |projeto_arquitetonico| %>
+      <tr>
+        <td><%= projeto_arquitetonico.status %></td>
+        <td><%= link_to 'Show', projeto_arquitetonico %></td>
+        <td><%= link_to 'Edit', edit_projeto_arquitetonico_path(projeto_arquitetonico) %></td>
+        <td><%= link_to 'Destroy', projeto_arquitetonico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Projeto arquitetonico', new_projeto_arquitetonico_path %>

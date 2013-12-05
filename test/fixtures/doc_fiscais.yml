@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rg: MyString
+  cpf: MyString
+  serasa: MyString
+  fpc: MyString
+  bens_imob: MyString
+  imposto_renda_pf: MyString
+  imposto_renda_pj: MyString
+  comprovante_resid: MyString
+  certidao_casamento: MyString
+  socio_rg: MyString
+  socio_cpf: MyString
+  socio_serasa: MyString
+  socio_fpc: MyString
+  socio_bens_imob: MyString
+  socio_imposto_renda_pf: MyString
+  socio_imposto_renda_pj: MyString
+  socio_comprovante_resid: MyString
+  socio_certidao_casamento: MyString
+
+two:
+  rg: MyString
+  cpf: MyString
+  serasa: MyString
+  fpc: MyString
+  bens_imob: MyString
+  imposto_renda_pf: MyString
+  imposto_renda_pj: MyString
+  comprovante_resid: MyString
+  certidao_casamento: MyString
+  socio_rg: MyString
+  socio_cpf: MyString
+  socio_serasa: MyString
+  socio_fpc: MyString
+  socio_bens_imob: MyString
+  socio_imposto_renda_pf: MyString
+  socio_imposto_renda_pj: MyString
+  socio_comprovante_resid: MyString
+  socio_certidao_casamento: MyString
