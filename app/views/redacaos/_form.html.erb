@@ -1,0 +1,13 @@
+<%= simple_form_for(@redacao) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :arquivo %>
+    <%= f.input :status %>
+    <%= f.input :interessado_id %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @cronograma.status %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @cronograma.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_cronograma_path(@cronograma) %> |
+<%= link_to 'Back', cronogramas_path %>

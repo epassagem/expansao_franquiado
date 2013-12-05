@@ -1,0 +1,31 @@
+<h1>Listing redacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Arquivo</th>
+      <th>Status</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @redacaos.each do |redacao| %>
+      <tr>
+        <td><%= redacao.arquivo %></td>
+        <td><%= redacao.status %></td>
+        <td><%= redacao.interessado_id %></td>
+        <td><%= link_to 'Show', redacao %></td>
+        <td><%= link_to 'Edit', edit_redacao_path(redacao) %></td>
+        <td><%= link_to 'Destroy', redacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Redacao', new_redacao_path %>

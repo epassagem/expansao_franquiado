@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @planilha.estatus %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @planilha.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_planilha_path(@planilha) %> |
+<%= link_to 'Back', planilhas_path %>

@@ -1,0 +1,29 @@
+<h1>Listing cronogramas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Status</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cronogramas.each do |cronograma| %>
+      <tr>
+        <td><%= cronograma.status %></td>
+        <td><%= cronograma.interessado_id %></td>
+        <td><%= link_to 'Show', cronograma %></td>
+        <td><%= link_to 'Edit', edit_cronograma_path(cronograma) %></td>
+        <td><%= link_to 'Destroy', cronograma, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cronograma', new_cronograma_path %>

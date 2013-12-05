@@ -1,0 +1,2 @@
+module RedacaosHelper
+end

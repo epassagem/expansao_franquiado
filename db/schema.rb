@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204173512) do
+ActiveRecord::Schema.define(version: 20131205184051) do
 
   create_table "carta", force: true do |t|
     t.string   "arquivo"
     t.boolean  "status"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cronogramas", force: true do |t|
+    t.string   "status"
     t.integer  "interessado_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -65,7 +72,22 @@ ActiveRecord::Schema.define(version: 20131204173512) do
     t.datetime "updated_at"
   end
 
+  create_table "planilhas", force: true do |t|
+    t.boolean  "estatus"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projeto_arquitetonicos", force: true do |t|
+    t.boolean  "status"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "redacaos", force: true do |t|
+    t.string   "arquivo"
     t.boolean  "status"
     t.integer  "interessado_id"
     t.datetime "created_at"

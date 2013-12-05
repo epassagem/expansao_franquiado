@@ -11,7 +11,11 @@ class InteressadosController < ApplicationController
   # GET /interessados/1
   # GET /interessados/1.json
   def show
-  
+    @projeto_arquitetonicos = @interessado.projeto_arquitetonicos
+    @cronogramas = @interessado.cronogramas
+    @redacaos = @interessado.redacaos
+    @planilhas = @interessado.planilhas
+    @doc_fiscais = @interessado.doc_fiscais
     @cartum = @interessado.cartum
   end
 
@@ -74,6 +78,6 @@ class InteressadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def interessado_params
-      params.require(:interessado).permit(:nome, :cpf, :rg, :data_nasc, :estado_civil, :regime_bens, :renda, :sera_admin, :dispon_integral, :quem_sera_admin, :resumo_prof, :manifesto_pos, :email, :cartum, :status, :carta, :projeto_arquitetonicos, :doc_fiscais, :cartum_id)
+      params.require(:interessado).permit(:nome, :cpf, :rg, :data_nasc, :estado_civil, :regime_bens, :renda, :sera_admin, :dispon_integral, :quem_sera_admin, :resumo_prof, :planilhas, :manifesto_pos, :email, :redacaos, :cronogramas, :projeto_arquitetonicos, :cartum, :status, :doc_fiscais, :carta, :doc_fiscais)
     end
 end

@@ -1,0 +1,3 @@
+class Planilha < ActiveRecord::Base
+  belongs_to :interessados
+end

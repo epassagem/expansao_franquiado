@@ -100,22 +100,135 @@
 	       </div>
 		<!--RG!-->  
 		 <div class="panel-body">
-		  <label>RG</label>
+		  <label>Documentos Fiscais e Financeiros</label>
 		  <div class="row">
 		    <% @interessado.doc_fiscais.each do |s| %>
 		      <div class="col-xs-3">
+			<label>RG</label>
 		        <div class="thumbnail" style="height:380px;">
 		            <%= image_tag s.rg.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.rg.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <%= link_to ' editar',   edit_doc_fiscai_path(s), :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-			      <input type="checkbox" ><%= s.status %></input>
+		              <input type="checkbox" ><%= s.status %></input>
 		            </div>
 			  </div>
+		      </div>
+		      
+		      <div class="col-xs-3">
+			<label>CPF</label>
+			<div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.cpf.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.cpf.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
 			</div>
-		      <% end %> 
-		    </div>           
+		      </div>
+		      
+		      <div class="col-xs-3">
+			<label>Serasa</label>
+			<div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.serasa.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.serasa.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
+			</div>
+		      </div>
+		 
+		      <div class="col-xs-3">
+			<label>SPC</label>
+			<div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.fpc.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.fpc.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
+			</div>
+		      </div>
+		    <% end %> 
 		  </div>
+		  <div class="row">
+		    <% @interessado.doc_fiscais.each do |s| %>
+		      <div class="col-xs-3">
+			<label>Bens Imobiliários</label>
+		        <div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.bens_imob.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.bens_imob.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
+			  </div>
+		      </div>
+		      
+		      <div class="col-xs-3">
+			<label>Imposto de Renda Pessoa Física</label>
+			<div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.imposto_renda_pf.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.imposto_renda_pf.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
+			</div>
+		      </div>
+		      
+		      <div class="col-xs-3">
+			<label>Imposto de Renda Pessoa Jurídica</label>
+			<div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.imposto_renda_pj.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.imposto_renda_pj.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
+			</div>
+		      </div>
+		 
+		      <div class="col-xs-3">
+			<label>Comprovante de Residência</label>
+			<div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.comprovante_resid.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.comprovante_resid.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
+			</div>
+		      </div>
+		    <% end %> 
+		  </div>
+		  <div class="row">
+		    <% @interessado.doc_fiscais.each do |s| %>
+		      <div class="col-xs-3">
+			<label>Certidão de Casamento</label>
+		        <div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.certidao_casamento.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.certidao_casamento.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
+			  </div>
+		      </div>
+		    <% end %> 
+		  </div>
+		  
+		  <!--Redação!-->
+		  <div class="row">
+		    <% @interessado.redacaos.each do |s| %>
+		      <div class="col-xs-3">
+			<label>Redação</label>
+		        <div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.status.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.certidao_casamento.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		              <input type="checkbox" ><%= s.status %></input>
+		            </div>
+			  </div>
+		      </div>
+		    <% end %> 
+		  </div>
+		  
+    
+    
+		</div>
 	    </div>
 	</div><!--end panel panel-default!-->
 	</div><!--end panel-group!-->
@@ -133,41 +246,23 @@
 	    <div id="carta_inten" class="panel-collapse collapse">
 		<!--Carta de Intenção!-->     
 		<div class="panel-body">
-		   
-		   
-		   
-		   
-		   
-		   <% @cartum.each do |s| %>
-		   
+		  <% @cartum.each do |s| %>	   
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.file_field :arquivo %>
-    <%= f.input :status %>
-    
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-		   
-		   
-	<% end %>	   
-		   
-		   
-		   
-		   
-		   
-		   
+		    <%= f.error_notification %>
+		      <div class="form-inputs">
+		       <%= f.file_field :arquivo %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		   <% end %>
+		  <% end %>	     
 	       </div>
 	    </div>
 	</div><!--end panel panel-default!-->
 	</div><!--end Carta Intenção-->
 	
-	<div class="panel-group" id="accordion"><!--Inicia Carta Intenção!-->
+	<div class="panel-group" id="accordion"><!--Documentos Fiscais e Financeiros!-->
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
 	      <h4 class="panel-title">
@@ -179,13 +274,279 @@
 	    <div id="doc_fiscais" class="panel-collapse collapse">
 		<!--Carta de Intenção!-->     
 		<div class="panel-body">
-		  <a href="">Carta de Intenção</a>
-		  <td><%= link_to 'Edit', edit_cartum_path(@interessado) %></td>
+		  <% @doc_fiscais.each do |s| %>	   
+		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
+		    <%= f.error_notification %>
+		      <div class="form-inputs">
+			<label>RG</label>
+		       <%= f.file_field :rg %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>CPF</label>
+		       <%= f.file_field :cpf %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Serasa</label>
+		       <%= f.file_field :serasa %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>FPC</label>
+		       <%= f.file_field :fpc %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Bens Imobiliários</label>
+		       <%= f.file_field :bens_imob %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Imposto de Renda Pessoa Física</label>
+		       <%= f.file_field :imposto_renda_pf %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Imposto de Renda Pessoa Jurídica</label>
+		       <%= f.file_field :imposto_renda_pj %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Comprovante de Residência</label>
+		       <%= f.file_field :comprovante_resid %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Certidão de Casamento</label>
+		       <%= f.file_field :certidao_casamento %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <!--Dados Sócios!-->
+		      <div class="form-inputs">
+			<label>RG Sócio</label>
+		       <%= f.file_field :socio_g %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>CPF Sócio</label>
+		       <%= f.file_field :socio_cpf %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Serasa Sócio</label>
+		       <%= f.file_field :socio_serasa %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>FPC Sócio</label>
+		       <%= f.file_field :socio_fpc %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Bens Imobiliários Sócio</label>
+		       <%= f.file_field :socio_bens_imob %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Imposto de Renda Pessoa Física Sócio</label>
+		       <%= f.file_field :socio_imposto_renda_pf %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Imposto de Renda Pessoa Jurídica Sócio</label>
+		       <%= f.file_field :socio_imposto_renda_pj %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Comprovante de Residência Sócio</label>
+		       <%= f.file_field :socio_comprovante_resid %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		      
+		      <div class="form-inputs">
+			<label>Certidão de Casamento Sócio</label>
+		       <%= f.file_field :socio_certidao_casamento %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		   <% end %>
+		  <% end %>	     
 	       </div>
 	    </div>
 	</div><!--end panel panel-default!-->
-	</div><!--end Carta Intenção-->
-    </div>
+	</div><!--end Dados Fiscais e Financeiros-->
+	
+	<div class="panel-group" id="accordion"><!--Inicia Redação!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#redacao">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Redação</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="redacao" class="panel-collapse collapse">
+		<!--Redação!-->     
+		<div class="panel-body">
+		  <% @redacaos.each do |s| %>	   
+		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
+		    <%= f.error_notification %>
+		      <div class="form-inputs">
+		       <%= f.radio :status %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		   <% end %>
+		  <% end %>	     
+	       </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Redação-->
+	
+	<div class="panel-group" id="accordion"><!--Inicia Planilha Resumo!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#planilha">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Planilhas com Resumo do Modelo de Negócios</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="planilha" class="panel-collapse collapse">
+		<!--projeto_arquitetonico!-->     
+		<div class="panel-body">
+		  <% @planilhas.each do |s| %>	   
+		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
+		    <%= f.error_notification %>
+		      <div class="form-inputs">
+		       <%= f.check_box :status %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		   <% end %>
+		  <% end %>	     
+	       </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Projeto Arquitetonico-->
+	
+	<div class="panel-group" id="accordion"><!--Inicia Projeto Arquitetonico!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#projeto_arqu">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Projeto Arquitetonico</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="projeto_arqu" class="panel-collapse collapse">
+		<!--projeto_arquitetonico!-->     
+		<div class="panel-body">
+		  <% @projeto_arquitetonicos.each do |s| %>	   
+		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
+		    <%= f.error_notification %>
+		      <div class="form-inputs">
+		       <%= f.radio :status %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		   <% end %>
+		  <% end %>	     
+	       </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Projeto Arquitetonico-->
+	
+	<div class="panel-group" id="accordion"><!--Inicia Cronograma do Projeto!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#projeto_arqu">
+		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Cronograma do Projeto</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="projeto_arqu" class="panel-collapse collapse">
+		<!--Cronograma do Projeto!-->     
+		<div class="panel-body">
+		  <% @cronogramas.each do |s| %>	   
+		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
+		    <%= f.error_notification %>
+		      <div class="form-inputs">
+		       <%= f.radio :status %>
+		      </div>
+		      <div class="form-actions">
+			<%= f.button :submit %>
+		      </div>
+		   <% end %>
+		  <% end %>	     
+	       </div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	</div><!--end Cronograma do Projeto-->
+	
+	
+	
+	
+	
+	
+	
+    </div><!--Coluna!-->
 
 </div><!--end Row!-->
 

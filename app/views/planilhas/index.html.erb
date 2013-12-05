@@ -1,0 +1,29 @@
+<h1>Listing planilhas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planilhas.each do |planilha| %>
+      <tr>
+        <td><%= planilha.estatus %></td>
+        <td><%= planilha.interessado_id %></td>
+        <td><%= link_to 'Show', planilha %></td>
+        <td><%= link_to 'Edit', edit_planilha_path(planilha) %></td>
+        <td><%= link_to 'Destroy', planilha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Planilha', new_planilha_path %>

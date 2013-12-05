@@ -1,4 +1,10 @@
 Expansao::Application.routes.draw do
+  resources :planilhas
+
+  resources :cronogramas
+
+  resources :redacaos
+
   resources :projeto_arquitetonicos
 
   resources :doc_fiscais
