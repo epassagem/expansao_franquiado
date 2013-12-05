@@ -1,76 +1,123 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-xs-3">
+	<p>
+	  <strong>Nome:</strong>
+	  <%= @interessado.nome %>
+	</p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @interessado.nome %>
-</p>
+	<p>
+	  <strong>Cpf:</strong>
+	  <%= @interessado.cpf %>
+	</p>
 
-<p>
-  <strong>Cpf:</strong>
-  <%= @interessado.cpf %>
-</p>
+	<p>
+	  <strong>Rg:</strong>
+	  <%= @interessado.rg %>
+	</p>
 
-<p>
-  <strong>Rg:</strong>
-  <%= @interessado.rg %>
-</p>
+	<p>
+	  <strong>Data nasc:</strong>
+	  <%= @interessado.data_nasc %>
+	</p>
 
-<p>
-  <strong>Data nasc:</strong>
-  <%= @interessado.data_nasc %>
-</p>
+	<p>
+	  <strong>Estado civil:</strong>
+	  <%= @interessado.estado_civil %>
+	</p>
 
-<p>
-  <strong>Estado civil:</strong>
-  <%= @interessado.estado_civil %>
-</p>
+	<p>
+	  <strong>Regime bens:</strong>
+	  <%= @interessado.regime_bens %>
+	</p>
 
-<p>
-  <strong>Regime bens:</strong>
-  <%= @interessado.regime_bens %>
-</p>
+	<p>
+	  <strong>Renda:</strong>
+	  <%= @interessado.renda %>
+	</p>
 
-<p>
-  <strong>Renda:</strong>
-  <%= @interessado.renda %>
-</p>
+	<p>
+	  <strong>Sera admin:</strong>
+	  <%= @interessado.sera_admin %>
+	</p>
 
-<p>
-  <strong>Sera admin:</strong>
-  <%= @interessado.sera_admin %>
-</p>
+	<p>
+	  <strong>Dispon integral:</strong>
+	  <%= @interessado.dispon_integral %>
+	</p>
 
-<p>
-  <strong>Dispon integral:</strong>
-  <%= @interessado.dispon_integral %>
-</p>
+	<p>
+	  <strong>Quem sera admin:</strong>
+	  <%= @interessado.quem_sera_admin %>
+	</p>
 
-<p>
-  <strong>Quem sera admin:</strong>
-  <%= @interessado.quem_sera_admin %>
-</p>
+	<p>
+	  <strong>Resumo prof:</strong>
+	  <%= @interessado.resumo_prof %>
+	</p>
 
-<p>
-  <strong>Resumo prof:</strong>
-  <%= @interessado.resumo_prof %>
-</p>
+	<p>
+	  <strong>Manifesto pos:</strong>
+	  <%= @interessado.manifesto_pos %>
+	</p>
 
-<p>
-  <strong>Manifesto pos:</strong>
-  <%= @interessado.manifesto_pos %>
-</p>
+	<p>
+	  <strong>Email:</strong>
+	  <%= @interessado.email %>
+	</p>
+    </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @interessado.email %>
-</p>
-<p>
-  <strong>Status</strong>
-  <% @interessado.cartum.each do |t| %>
-    <td><%= t.status %></td>
-    <td><%= image_tag t.arquivo %></td>
-  <% end %>
-</p>
+
+
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#etapa1">
+          <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 1</h4>
+        </a>
+      </h4>
+    </div>
+    <div id="etapa1" class="panel-collapse collapse">
+	<!--Carta de Intenção!-->     
+	<div class="panel-body">
+          <label>Carta de Intenção</label>
+	  <div class="row">
+            <% @interessado.cartum.each do |s| %>
+              <div class="col-xs-3">
+                <div class="thumbnail" style="height:380px;">
+                    <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+		    <div class="caption">
+	              <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		      <input type="checkbox" ><%= s.status %></input>
+                    </div>
+	          </div>
+	        </div>
+              <% end %> 
+            </div>           
+       </div>
+	<!--RG!-->  
+	 <div class="panel-body">
+	  <label>RG</label>
+	  <div class="row">
+            <% @interessado.doc_fiscais.each do |s| %>
+              <div class="col-xs-3">
+                <div class="thumbnail" style="height:380px;">
+                    <%= image_tag s.rg.to_s, :class =>"thumbnail" %> 
+		    <div class="caption">
+	              <%= link_to ' baixar',  s.rg.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+                      <%= link_to ' editar',   edit_doc_fiscai_path(s), :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		      <input type="checkbox" ><%= s.status %></input>
+                    </div>
+	          </div>
+	        </div>
+              <% end %> 
+            </div>           
+          </div>
+    </div>
+    
+
+</div><!--end Row!-->
 
 <%= link_to 'Edit', edit_interessado_path(@interessado) %> |
 <%= link_to 'Back', interessados_path %>

@@ -13,8 +13,9 @@
  *= require twitter/bootstrap
  */
 
+
 .simple_form,.form-actions, .form-signin-heading {
-    max-width: 730px;
+   
     padding: 15px;
     margin: 0px auto;
 
@@ -26,4 +27,13 @@
     border-color: rgb(221, 221, 221);
     border-radius: 4px 4px 0px 0px;
     box-shadow: none;
+}
+
+.container {
+  width: 95%;
+    margin-left: -50%;
+}
+
+#conteiner{
+	width: 2700px;
 }

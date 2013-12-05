@@ -5,6 +5,7 @@
     <tr>
       <th>Arquivo</th>
       <th>Status</th>
+      <th>ID INteressado</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= cartum.arquivo %></td>
         <td><%= cartum.status %></td>
+        <td><%= cartum.interessado_id %></td>
         <td><%= link_to 'Show', cartum %></td>
         <td><%= link_to 'Edit', edit_cartum_path(cartum) %></td>
         <td><%= link_to 'Destroy', cartum, method: :delete, data: { confirm: 'Are you sure?' } %></td>

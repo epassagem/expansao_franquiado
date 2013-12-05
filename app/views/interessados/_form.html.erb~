@@ -29,7 +29,8 @@
       </h4>
     </div>
     <div id="etapa1" class="panel-collapse collapse">
-     <div class="panel-body">
+	<!--Carta de Intenção!-->     
+	<div class="panel-body">
           <label>Carta de Intenção</label>
 	  <div class="row">
             <% @interessado.cartum.each do |s| %>
@@ -45,6 +46,7 @@
               <% end %> 
             </div>           
        </div>
+	<!--RG!-->  
 	 <div class="panel-body">
 	  <label>RG</label>
 	  <div class="row">
@@ -54,6 +56,7 @@
                     <%= image_tag s.rg.to_s, :class =>"thumbnail" %> 
 		    <div class="caption">
 	              <%= link_to ' baixar',  s.rg.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+<%= link_to ' editar',   edit_doc_fiscai_path(s), :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
 		      <input type="checkbox" ><%= s.status %></input>
                     </div>
 	          </div>
