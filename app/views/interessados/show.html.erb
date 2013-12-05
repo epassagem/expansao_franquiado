@@ -133,7 +133,35 @@
 	    <div id="carta_inten" class="panel-collapse collapse">
 		<!--Carta de Intenção!-->     
 		<div class="panel-body">
-		  <a href="">Carta de Intenção</a>       
+		   
+		   
+		   
+		   
+		   
+		   <% @cartum.each do |s| %>
+		   
+		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.file_field :arquivo %>
+    <%= f.input :status %>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+		   
+		   
+	<% end %>	   
+		   
+		   
+		   
+		   
+		   
+		   
 	       </div>
 	    </div>
 	</div><!--end panel panel-default!-->

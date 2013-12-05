@@ -11,6 +11,8 @@ class InteressadosController < ApplicationController
   # GET /interessados/1
   # GET /interessados/1.json
   def show
+  
+    @cartum = @interessado.cartum
   end
 
   # GET /interessados/new
@@ -43,6 +45,7 @@ class InteressadosController < ApplicationController
   def update
     respond_to do |format|
       if @interessado.update(interessado_params)
+         @cartum.update(cartum_params)
         format.html { redirect_to @interessado, notice: 'Interessado was successfully updated.' }
         format.json { head :no_content }
       else
