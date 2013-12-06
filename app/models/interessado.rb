@@ -18,4 +18,35 @@ class Interessado < ActiveRecord::Base
  
  has_many :planilhas, autosave: true
  accepts_nested_attributes_for :planilhas
+
+ has_many :pagto_taxas, autosave: true
+ accepts_nested_attributes_for :pagto_taxas
+
+ has_many :pro_contratos, autosave: true
+ accepts_nested_attributes_for :pro_contratos
+
+ has_many :valid_ponto_comers, autosave: true
+ accepts_nested_attributes_for :valid_ponto_comers
+
+ has_many :doc_ponto_comers, autosave: true
+ accepts_nested_attributes_for :doc_ponto_comers
+
+ has_many :aprov_estabelecimentos, autosave: true
+ accepts_nested_attributes_for :aprov_estabelecimentos
+
+ has_many :oprov_proj_arqus, autosave: true
+ accepts_nested_attributes_for :oprov_proj_arqus
+
+ has_many :trein_consul_comercials, autosave: true
+ accepts_nested_attributes_for :trein_consul_comercials
+
+ has_many :trein_coord_pedags, autosave: true
+ accepts_nested_attributes_for :trein_coord_pedags
+
+ has_many :trein_oper_franquia, autosave: true
+ accepts_nested_attributes_for :trein_oper_franquia
+
+ has_many :trein_prof_titulars, autosave: true
+ accepts_nested_attributes_for :trein_prof_titulars
+
 end

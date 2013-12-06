@@ -15,6 +15,7 @@ class CartaController < ApplicationController
   # GET /carta/new
   def new
     @cartum = Cartum.new
+    
   end
 
   # GET /carta/1/edit
@@ -65,10 +66,11 @@ class CartaController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cartum
       @cartum = Cartum.find(params[:id])
+     
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cartum_params
-      params.require(:cartum).permit(:arquivo, :status)
+      params.require(:cartum).permit(:arquivo, :status, :interessado_id)
     end
 end

@@ -1,0 +1,29 @@
+<h1>Listing aprov_estabelecimentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aprov_estabelecimentos.each do |aprov_estabelecimento| %>
+      <tr>
+        <td><%= aprov_estabelecimento.estatus %></td>
+        <td><%= aprov_estabelecimento.interessado_id %></td>
+        <td><%= link_to 'Show', aprov_estabelecimento %></td>
+        <td><%= link_to 'Edit', edit_aprov_estabelecimento_path(aprov_estabelecimento) %></td>
+        <td><%= link_to 'Destroy', aprov_estabelecimento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Aprov estabelecimento', new_aprov_estabelecimento_path %>

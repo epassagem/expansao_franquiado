@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @trein_prof_titular.estatus %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @trein_prof_titular.data %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @trein_prof_titular.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_trein_prof_titular_path(@trein_prof_titular) %> |
+<%= link_to 'Back', trein_prof_titulars_path %>

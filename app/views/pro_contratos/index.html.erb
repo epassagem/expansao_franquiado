@@ -1,0 +1,31 @@
+<h1>Listing pro_contratos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Arquivo</th>
+      <th>Estatus</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pro_contratos.each do |pro_contrato| %>
+      <tr>
+        <td><%= pro_contrato.arquivo %></td>
+        <td><%= pro_contrato.estatus %></td>
+        <td><%= pro_contrato.interessado_id %></td>
+        <td><%= link_to 'Show', pro_contrato %></td>
+        <td><%= link_to 'Edit', edit_pro_contrato_path(pro_contrato) %></td>
+        <td><%= link_to 'Destroy', pro_contrato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pro contrato', new_pro_contrato_path %>

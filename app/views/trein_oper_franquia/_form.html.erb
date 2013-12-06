@@ -1,0 +1,12 @@
+<%= simple_form_for(@trein_oper_franquium) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.check_box :estatus %>
+    <%= f.input :data %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

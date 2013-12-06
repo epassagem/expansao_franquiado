@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @trein_consul_comercial.estatus %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @trein_consul_comercial.data %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @trein_consul_comercial.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_trein_consul_comercial_path(@trein_consul_comercial) %> |
+<%= link_to 'Back', trein_consul_comercials_path %>

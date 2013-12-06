@@ -1,0 +1,31 @@
+<h1>Listing trein_consul_comercials</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Data</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trein_consul_comercials.each do |trein_consul_comercial| %>
+      <tr>
+        <td><%= trein_consul_comercial.estatus %></td>
+        <td><%= trein_consul_comercial.data %></td>
+        <td><%= trein_consul_comercial.interessado_id %></td>
+        <td><%= link_to 'Show', trein_consul_comercial %></td>
+        <td><%= link_to 'Edit', edit_trein_consul_comercial_path(trein_consul_comercial) %></td>
+        <td><%= link_to 'Destroy', trein_consul_comercial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trein consul comercial', new_trein_consul_comercial_path %>

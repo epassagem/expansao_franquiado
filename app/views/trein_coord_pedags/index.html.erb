@@ -1,0 +1,31 @@
+<h1>Listing trein_coord_pedags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Data</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trein_coord_pedags.each do |trein_coord_pedag| %>
+      <tr>
+        <td><%= trein_coord_pedag.estatus %></td>
+        <td><%= trein_coord_pedag.data %></td>
+        <td><%= trein_coord_pedag.interessado_id %></td>
+        <td><%= link_to 'Show', trein_coord_pedag %></td>
+        <td><%= link_to 'Edit', edit_trein_coord_pedag_path(trein_coord_pedag) %></td>
+        <td><%= link_to 'Destroy', trein_coord_pedag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trein coord pedag', new_trein_coord_pedag_path %>

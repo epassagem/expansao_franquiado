@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @doc_ponto_comer.estatus %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @doc_ponto_comer.arquivo %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @doc_ponto_comer.tipo %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @doc_ponto_comer.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_doc_ponto_comer_path(@doc_ponto_comer) %> |
+<%= link_to 'Back', doc_ponto_comers_path %>

@@ -1,0 +1,29 @@
+<h1>Listing pagto_taxas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pagto_taxas.each do |pagto_taxa| %>
+      <tr>
+        <td><%= pagto_taxa.estatus %></td>
+        <td><%= pagto_taxa.interessado_id %></td>
+        <td><%= link_to 'Show', pagto_taxa %></td>
+        <td><%= link_to 'Edit', edit_pagto_taxa_path(pagto_taxa) %></td>
+        <td><%= link_to 'Destroy', pagto_taxa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pagto taxa', new_pagto_taxa_path %>

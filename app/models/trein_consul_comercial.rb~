@@ -1,0 +1,2 @@
+class TreinConsulComercial < ActiveRecord::Base
+end

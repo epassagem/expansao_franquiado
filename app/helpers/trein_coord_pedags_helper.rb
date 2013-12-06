@@ -1,0 +1,2 @@
+module TreinCoordPedagsHelper
+end

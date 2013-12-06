@@ -1,0 +1,2 @@
+module AprovEstabelecimentosHelper
+end

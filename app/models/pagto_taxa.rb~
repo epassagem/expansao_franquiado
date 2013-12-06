@@ -1,0 +1,2 @@
+class PagtoTaxa < ActiveRecord::Base
+end

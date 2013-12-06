@@ -1,0 +1,12 @@
+<%= simple_form_for(@oprov_proj_arqu) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.check_box :estatus %>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

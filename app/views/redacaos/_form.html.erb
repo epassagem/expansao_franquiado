@@ -2,9 +2,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :arquivo %>
-    <%= f.input :status %>
-    <%= f.input :interessado_id %>
+    <%= f.file_field :arquivo %>
+    <%= f.check_box :status %>
+    
   </div>
 
   <div class="form-actions">

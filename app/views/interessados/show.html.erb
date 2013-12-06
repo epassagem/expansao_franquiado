@@ -91,14 +91,14 @@
 		            <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-			      <input type="checkbox" ><%= s.status %></input>
+			      
 		            </div>
 			  </div>
 			</div>
 		      <% end %> 
 		    </div>           
 	       </div>
-		<!--RG!-->  
+		<!--RG!-->
 		 <div class="panel-body">
 		  <label>Documentos Fiscais e Financeiros</label>
 		  <div class="row">
@@ -109,7 +109,7 @@
 		            <%= image_tag s.rg.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.rg.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		             
 		            </div>
 			  </div>
 		      </div>
@@ -120,7 +120,7 @@
 		            <%= image_tag s.cpf.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.cpf.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		             
 		            </div>
 			</div>
 		      </div>
@@ -131,7 +131,7 @@
 		            <%= image_tag s.serasa.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.serasa.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		              
 		            </div>
 			</div>
 		      </div>
@@ -142,7 +142,7 @@
 		            <%= image_tag s.fpc.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.fpc.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		             
 		            </div>
 			</div>
 		      </div>
@@ -156,7 +156,7 @@
 		            <%= image_tag s.bens_imob.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.bens_imob.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		             
 		            </div>
 			  </div>
 		      </div>
@@ -167,7 +167,7 @@
 		            <%= image_tag s.imposto_renda_pf.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.imposto_renda_pf.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		           
 		            </div>
 			</div>
 		      </div>
@@ -178,7 +178,7 @@
 		            <%= image_tag s.imposto_renda_pj.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.imposto_renda_pj.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		              
 		            </div>
 			</div>
 		      </div>
@@ -189,7 +189,7 @@
 		            <%= image_tag s.comprovante_resid.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.comprovante_resid.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		              
 		            </div>
 			</div>
 		      </div>
@@ -203,37 +203,210 @@
 		            <%= image_tag s.certidao_casamento.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
 			      <%= link_to ' baixar',  s.certidao_casamento.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+		              
 		            </div>
 			  </div>
 		      </div>
 		    <% end %> 
-		  </div>
-		  
+		  </div>		  
 		  <!--Redação!-->
 		  <div class="row">
-		    <% @interessado.redacaos.each do |s| %>
 		      <div class="col-xs-3">
+			<% @interessado.redacaos.each do |s| %>
 			<label>Redação</label>
 		        <div class="thumbnail" style="height:380px;">
-		            <%= image_tag s.status.to_s, :class =>"thumbnail" %> 
+		            <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
 			    <div class="caption">
-			      <%= link_to ' baixar',  s.certidao_casamento.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
-		              <input type="checkbox" ><%= s.status %></input>
+			      <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+		               
 		            </div>
 			  </div>
-		      </div>
-		    <% end %> 
-		  </div>
-		  
+		       <% end %>
+		       </div>
+		      
+		      <!--PLanilhas com o Resumo do Modelo de Negocios!-->
+		      <div class="col-xs-3">
+			 <% @interessado.planilhas.each do |s| %>
+			 <div class="row">
+			<label>Planilhas com Modelo de Negócios</label>
+			</div>
+			 <div class="row">
+			<% if s.estatus == true%>
+			  <input type="checkbox" checked></input>
+			<% else %>
+			  <input type="checkbox" checked></input>
+			<% end %>
+			</div>
+		      <% end %>
+		    </div>
+		      
+		    <!--Projeto Arquitetonico!-->
+		      <div class="col-xs-3">
+			 <% @interessado.projeto_arquitetonicos.each do |s| %>
+			 <div class="row">
+			<label>Projeto Arquitetônico</label>
+			</div>
+			 <div class="row">
+			<% if s.status == true%>
+			  <input type="checkbox" checked></input>
+			<% else %>
+			  <input type="checkbox" checked></input>
+			<% end %>
+			</div>
+		      <% end %>
+		    </div>
+		   
+		   <!--Cronograma de Treinamento!-->
+		      <div class="col-xs-3">
+			 <% @interessado.cronogramas.each do |s| %>
+			 <div class="row">
+			<label>Cronograma de Treinamento</label>
+			</div>
+			 <div class="row">
+			<% if s.status == true%>
+			  <input type="checkbox" checked></input>
+			<% else %>
+			  <input type="checkbox" checked></input>
+			<% end %>
+			</div>
+		      <% end %>
+		    </div>
+		   
+		  </div><!--End Row!-->
+    
+    
+    
+    
+    
     
     
 		</div>
 	    </div>
 	</div><!--end panel panel-default!-->
 	</div><!--end panel-group!-->
+    
+    
+    
+    <div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#etapa2">
+		  <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 2</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="etapa2" class="panel-collapse collapse">
+		<!--Carta de Intenção!-->     
+		<div class="panel-body">
+		  <label>Carta de Intenção</label>
+		  <div class="row">
+		       <div class="col-xs-3">
+		         <% @interessado.pagto_taxas.each do |s| %>
+			 <div class="row">
+			  <label>Cronograma de Treinamento</label>
+			 </div>
+			 <div class="row">
+			    <% if s.status == true%>
+			      <input type="checkbox" checked></input>
+			    <% else %>
+			      <input type="checkbox" checked></input>
+			    <% end %>
+			</div>
+		      <% end %>
+		      </div>
+		   </div>           
+	       </div>
+    	</div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	
+	 <div class="panel-group" id="accordion"><!--Inicio Etapa 3!-->
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#etapa3">
+		  <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 3</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="etapa3" class="panel-collapse collapse">
+		
+		<!--Carta de Intenção!-->     
+		<div class="panel-body">
+		 
+		  <div class="row">
+		   
+		     <div class="col-xs-3">
+		         <% @interessado.pagto_taxas.each do |s| %>
+			 <div class="row">
+			  <label>Cronograma de Treinamento</label>
+			 </div>
+			 <div class="row">
+			    <% if s.status == true%>
+			      <input type="checkbox" checked></input>
+			    <% else %>
+			      <input type="checkbox" checked></input>
+			    <% end %>
+			</div>
+		      <% end %>
+		      </div>
+		  
+		    </div>
+		  
+		
+	       </div>
+    	</div>
+	    </div>
+	</div><!--end panel panel-default!--><!--Fim Etapa 3!-->
+	 <div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+		<a data-toggle="collapse" data-parent="#accordion" href="#etapa4">
+		  <h4><span class="glyphicon glyphicon-list" style="margin-right:20px;"></span>Etapa 4</h4>
+		</a>
+	      </h4>
+	    </div>
+	    <div id="etapa4" class="panel-collapse collapse">
+		<!--Carta de Intenção!-->     
+		<div class="panel-body">
+		  <label>Carta de Intenção</label>
+		  <div class="row">
+		    <% @interessado.cartum.each do |s| %>
+		      <div class="col-xs-3">
+		        <div class="thumbnail" style="height:380px;">
+		            <%= image_tag s.arquivo.to_s, :class =>"thumbnail" %> 
+			    <div class="caption">
+			      <%= link_to ' baixar',  s.arquivo.to_s, :class => 'glyphicon glyphicon-cloud-download btn btn-default' %>
+			      
+		            </div>
+			  </div>
+			</div>
+		      <% end %> 
+		    </div>           
+	       </div>
+    	</div>
+	    </div>
+	</div><!--end panel panel-default!-->
+	
     </div><!--end col!-->
-    <div class="col-xs-3">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="col-xs-3"><!--Inicio 3 Terceira Coluna!-->
      <div class="panel-group" id="accordion"><!--Inicia Carta Intenção!-->
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
@@ -444,7 +617,8 @@
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">
-		       <%= f.radio :status %>
+			 <%= f.file_field :arquivo%>
+		       
 		      </div>
 		      <div class="form-actions">
 			<%= f.button :submit %>
@@ -472,7 +646,7 @@
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">
-		       <%= f.check_box :status %>
+		       <%= f.check_box :estatus %>
 		      </div>
 		      <div class="form-actions">
 			<%= f.button :submit %>
@@ -500,7 +674,7 @@
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">
-		       <%= f.radio :status %>
+		       <%= f.check_box :status %>
 		      </div>
 		      <div class="form-actions">
 			<%= f.button :submit %>
@@ -528,7 +702,7 @@
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">
-		       <%= f.radio :status %>
+		       <%= f.check_box :status %>
 		      </div>
 		      <div class="form-actions">
 			<%= f.button :submit %>

@@ -1,0 +1,29 @@
+<h1>Listing valid_ponto_comers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @valid_ponto_comers.each do |valid_ponto_comer| %>
+      <tr>
+        <td><%= valid_ponto_comer.estatus %></td>
+        <td><%= valid_ponto_comer.interessado_id %></td>
+        <td><%= link_to 'Show', valid_ponto_comer %></td>
+        <td><%= link_to 'Edit', edit_valid_ponto_comer_path(valid_ponto_comer) %></td>
+        <td><%= link_to 'Destroy', valid_ponto_comer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Valid ponto comer', new_valid_ponto_comer_path %>

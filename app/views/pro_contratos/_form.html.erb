@@ -1,0 +1,12 @@
+<%= simple_form_for(@pro_contrato) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.file_field :arquivo %>
+    <%= f.check_box :estatus %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

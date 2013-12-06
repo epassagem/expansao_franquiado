@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @pro_contrato.arquivo %>
+</p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @pro_contrato.estatus %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @pro_contrato.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_pro_contrato_path(@pro_contrato) %> |
+<%= link_to 'Back', pro_contratos_path %>

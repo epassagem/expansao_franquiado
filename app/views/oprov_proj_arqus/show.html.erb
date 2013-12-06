@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @oprov_proj_arqu.estatus %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @oprov_proj_arqu.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_oprov_proj_arqu_path(@oprov_proj_arqu) %> |
+<%= link_to 'Back', oprov_proj_arqus_path %>

@@ -1,0 +1,2 @@
+class OprovProjArqu < ActiveRecord::Base
+end

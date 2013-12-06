@@ -1,0 +1,3 @@
+class TreinProfTitular < ActiveRecord::Base
+  
+end

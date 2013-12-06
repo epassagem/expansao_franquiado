@@ -1,0 +1,29 @@
+<h1>Listing oprov_proj_arqus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oprov_proj_arqus.each do |oprov_proj_arqu| %>
+      <tr>
+        <td><%= oprov_proj_arqu.estatus %></td>
+        <td><%= oprov_proj_arqu.interessado_id %></td>
+        <td><%= link_to 'Show', oprov_proj_arqu %></td>
+        <td><%= link_to 'Edit', edit_oprov_proj_arqu_path(oprov_proj_arqu) %></td>
+        <td><%= link_to 'Destroy', oprov_proj_arqu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Oprov proj arqu', new_oprov_proj_arqu_path %>

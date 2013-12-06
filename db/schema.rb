@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205184051) do
+ActiveRecord::Schema.define(version: 20131206143755) do
+
+  create_table "aprov_estabelecimentos", force: true do |t|
+    t.boolean  "estatus"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "carta", force: true do |t|
     t.string   "arquivo"
@@ -54,6 +61,15 @@ ActiveRecord::Schema.define(version: 20131205184051) do
     t.datetime "updated_at"
   end
 
+  create_table "doc_ponto_comers", force: true do |t|
+    t.boolean  "estatus"
+    t.string   "arquivo"
+    t.string   "tipo"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "interessados", force: true do |t|
     t.string   "nome"
     t.integer  "cpf"
@@ -72,7 +88,29 @@ ActiveRecord::Schema.define(version: 20131205184051) do
     t.datetime "updated_at"
   end
 
+  create_table "oprov_proj_arqus", force: true do |t|
+    t.boolean  "estatus"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pagto_taxas", force: true do |t|
+    t.boolean  "estatus"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "planilhas", force: true do |t|
+    t.boolean  "estatus"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pro_contratos", force: true do |t|
+    t.string   "arquivo"
     t.boolean  "estatus"
     t.integer  "interessado_id"
     t.datetime "created_at"
@@ -89,6 +127,38 @@ ActiveRecord::Schema.define(version: 20131205184051) do
   create_table "redacaos", force: true do |t|
     t.string   "arquivo"
     t.boolean  "status"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trein_consul_comercials", force: true do |t|
+    t.boolean  "estatus"
+    t.date     "data"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trein_coord_pedags", force: true do |t|
+    t.boolean  "estatus"
+    t.date     "data"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trein_oper_franquia", force: true do |t|
+    t.boolean  "estatus"
+    t.date     "data"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trein_prof_titulars", force: true do |t|
+    t.boolean  "estatus"
+    t.date     "data"
     t.integer  "interessado_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -111,5 +181,12 @@ ActiveRecord::Schema.define(version: 20131205184051) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "valid_ponto_comers", force: true do |t|
+    t.integer  "estatus"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

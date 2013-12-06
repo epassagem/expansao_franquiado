@@ -1,0 +1,2 @@
+module ValidPontoComersHelper
+end

@@ -11,6 +11,22 @@ class InteressadosController < ApplicationController
   # GET /interessados/1
   # GET /interessados/1.json
   def show
+    @pagto_taxas = @interessado.pagto_taxas
+    @pro_contratos = @interessado.pro_contratos
+    @valid_ponto_comers = @interessado.valid_ponto_comers
+    @doc_ponto_comers = @interessado.doc_ponto_comers
+    @aprov_estabelecimentos = @interessado.aprov_estabelecimentos
+    @oprov_proj_arqus = @interessado.oprov_proj_arqus
+    @trein_consul_comercials = @interessado.trein_consul_comercials
+    @trein_coord_pedags = @interessado.trein_coord_pedags
+    @trein_oper_franquia = @interessado.trein_oper_franquia
+
+    @projeto_arquitetonicos = @interessado.projeto_arquitetonicos
+    @cronogramas = @interessado.cronogramas
+    @redacaos = @interessado.redacaos
+    @planilhas = @interessado.planilhas
+    @doc_fiscais = @interessado.doc_fiscais
+    @cartum = @interessado.cartum
   end
 
   # GET /interessados/new
@@ -43,6 +59,7 @@ class InteressadosController < ApplicationController
   def update
     respond_to do |format|
       if @interessado.update(interessado_params)
+         @cartum.update(cartum_params)
         format.html { redirect_to @interessado, notice: 'Interessado was successfully updated.' }
         format.json { head :no_content }
       else
@@ -71,6 +88,6 @@ class InteressadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def interessado_params
-      params.require(:interessado).permit(:nome, :cpf, :rg, :data_nasc, :estado_civil, :regime_bens, :renda, :sera_admin, :dispon_integral, :quem_sera_admin, :resumo_prof, :manifesto_pos, :email, :cartum, :status, :carta, :projeto_arquitetonicos, :doc_fiscais, :cartum_id)
+      params.require(:interessado).permit(:nome, :cpf, :rg, :data_nasc, :estado_civil, :regime_bens, :renda, :sera_admin, :dispon_integral, :quem_sera_admin, :resumo_prof, :planilhas, :manifesto_pos, :email, :redacaos, :cronogramas, :projeto_arquitetonicos, :cartum, :status, :doc_fiscais, :carta, :doc_fiscais)
     end
 end

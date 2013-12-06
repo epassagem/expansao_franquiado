@@ -1,0 +1,2 @@
+module ProContratosHelper
+end

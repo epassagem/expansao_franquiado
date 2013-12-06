@@ -1,4 +1,24 @@
 Expansao::Application.routes.draw do
+  resources :aprov_estabelecimentos
+
+  resources :oprov_proj_arqus
+
+  resources :doc_ponto_comers
+
+  resources :valid_ponto_comers
+
+  resources :trein_prof_titulars
+
+  resources :trein_coord_pedags
+
+  resources :trein_oper_franquia
+
+  resources :trein_consul_comercials
+
+  resources :pagto_taxas
+
+  resources :pro_contratos
+
   resources :planilhas
 
   resources :cronogramas

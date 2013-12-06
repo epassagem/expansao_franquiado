@@ -15,7 +15,6 @@ class CartaController < ApplicationController
   # GET /carta/new
   def new
     @cartum = Cartum.new
-    
   end
 
   # GET /carta/1/edit

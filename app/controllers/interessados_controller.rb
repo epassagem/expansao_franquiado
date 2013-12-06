@@ -11,6 +11,17 @@ class InteressadosController < ApplicationController
   # GET /interessados/1
   # GET /interessados/1.json
   def show
+    @pagto_taxas = @interessado.pagto_taxas
+    @pro_contratos = @interessado.pro_contratos
+    @valid_ponto_comers = @interessado.valid_ponto_comers
+    @doc_ponto_comers = @interessado.doc_ponto_comers
+    @aprov_estabelecimentos = @interessado.aprov_estabelecimentos
+    @oprov_proj_arqus = @interessado.oprov_proj_arqus
+    @trein_consul_comercials = @interessado.trein_consul_comercials
+    @trein_coord_pedags = @interessado.trein_coord_pedags
+    @trein_oper_franquia = @interessado.trein_oper_franquia
+    @trein_prof_titulars = @interessado.trein_prof_titulars
+
     @projeto_arquitetonicos = @interessado.projeto_arquitetonicos
     @cronogramas = @interessado.cronogramas
     @redacaos = @interessado.redacaos
@@ -78,6 +89,6 @@ class InteressadosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def interessado_params
-      params.require(:interessado).permit(:nome, :cpf, :rg, :data_nasc, :estado_civil, :regime_bens, :renda, :sera_admin, :dispon_integral, :quem_sera_admin, :resumo_prof, :planilhas, :manifesto_pos, :email, :redacaos, :cronogramas, :projeto_arquitetonicos, :cartum, :status, :doc_fiscais, :carta, :doc_fiscais)
+      params.require(:interessado).permit(:nome, :cpf, :rg, :data_nasc, :estado_civil, :regime_bens, :renda, :sera_admin, :dispon_integral, :pagto_taxas, :pro_contratos, :valid_ponto_comers, :doc_ponto_comers, :aprov_estabelecimento, :oprov_proj_arqus , :trein_consul_comercia, :trein_coord_pedags, :trein_oper_franquia, :trein_prof_titulars, :quem_sera_admin, :resumo_prof, :planilhas, :manifesto_pos, :email, :redacaos, :cronogramas, :projeto_arquitetonicos, :cartum, :status, :doc_fiscais, :carta, :doc_fiscais)
     end
 end

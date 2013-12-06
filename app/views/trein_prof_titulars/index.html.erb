@@ -1,0 +1,31 @@
+<h1>Listing trein_prof_titulars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Data</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trein_prof_titulars.each do |trein_prof_titular| %>
+      <tr>
+        <td><%= trein_prof_titular.estatus %></td>
+        <td><%= trein_prof_titular.data %></td>
+        <td><%= trein_prof_titular.interessado_id %></td>
+        <td><%= link_to 'Show', trein_prof_titular %></td>
+        <td><%= link_to 'Edit', edit_trein_prof_titular_path(trein_prof_titular) %></td>
+        <td><%= link_to 'Destroy', trein_prof_titular, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trein prof titular', new_trein_prof_titular_path %>

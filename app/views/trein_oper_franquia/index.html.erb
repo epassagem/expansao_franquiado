@@ -1,0 +1,31 @@
+<h1>Listing trein_oper_franquia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Estatus</th>
+      <th>Data</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trein_oper_franquia.each do |trein_oper_franquium| %>
+      <tr>
+        <td><%= trein_oper_franquium.estatus %></td>
+        <td><%= trein_oper_franquium.data %></td>
+        <td><%= trein_oper_franquium.interessado_id %></td>
+        <td><%= link_to 'Show', trein_oper_franquium %></td>
+        <td><%= link_to 'Edit', edit_trein_oper_franquium_path(trein_oper_franquium) %></td>
+        <td><%= link_to 'Destroy', trein_oper_franquium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trein oper franquium', new_trein_oper_franquium_path %>

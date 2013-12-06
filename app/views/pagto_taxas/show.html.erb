@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @pagto_taxa.estatus %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @pagto_taxa.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_pagto_taxa_path(@pagto_taxa) %> |
+<%= link_to 'Back', pagto_taxas_path %>
