@@ -299,7 +299,7 @@
 	    <div id="etapa2" class="panel-collapse collapse">
 		<!--Carta de Intenção!-->     
 		<div class="panel-body">
-		  <label>Carta de Intenção</label>
+		  <label>Pagamento Taxa</label>
 		  <div class="row">
 		       <div class="col-xs-3">
 		         <% @interessado.pagto_taxas.each do |s| %>
@@ -416,22 +416,24 @@
 		</a>
 	      </h4>
 	    </div>
+
 	    <div id="carta_inten" class="panel-collapse collapse">
 		<!--Carta de Intenção!-->     
 		<div class="panel-body">
-		  <% @cartum.each do |s| %>	   
-		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
-		    <%= f.error_notification %>
-		      <div class="form-inputs">
-		       <%= f.file_field :arquivo %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		   <% end %>
-		  <% end %>	     
-	       </div>
-	    </div>
+		 <% @interessado.cartum.each do |r| %>
+		   <%= r.arquivo %>
+		   <%= r.interessado_id %>
+
+		   <%= form_for r do |f| %>
+	            <%= f.label :arquivo %><br>
+		    <%= f.file_field :arquivo %>	
+		    <%= f.submit %>
+		    
+
+		  <% end %>
+		<%end%>
+	 
+
 	</div><!--end panel panel-default!-->
 	</div><!--end Carta Intenção-->
 	
@@ -447,7 +449,7 @@
 	    <div id="doc_fiscais" class="panel-collapse collapse">
 		<!--D!-->     
 		<div class="panel-body">
-		  <% @doc_fiscais.each do |s| %>	   
+		  <% @interessado.doc_fiscais.each do |s| %>	   
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">
@@ -613,7 +615,7 @@
 	    <div id="redacao" class="panel-collapse collapse">
 		<!--Redação!-->     
 		<div class="panel-body">
-		  <% @redacaos.each do |s| %>	   
+		  <% @interessado.redacaos.each do |s| %>	   
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">
@@ -642,7 +644,7 @@
 	    <div id="planilha" class="panel-collapse collapse">
 		<!--projeto_arquitetonico!-->     
 		<div class="panel-body">
-		  <% @planilhas.each do |s| %>	   
+		  <% @interessado.planilhas.each do |s| %>	   
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">
@@ -670,7 +672,7 @@
 	    <div id="projeto_arqu" class="panel-collapse collapse">
 		<!--projeto_arquitetonico!-->     
 		<div class="panel-body">
-		  <% @projeto_arquitetonicos.each do |s| %>	   
+		  <% @interessado.projeto_arquitetonicos.each do |s| %>	   
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">
@@ -698,7 +700,7 @@
 	    <div id="projeto_arqu" class="panel-collapse collapse">
 		<!--Cronograma do Projeto!-->     
 		<div class="panel-body">
-		  <% @cronogramas.each do |s| %>	   
+		  <% @interessado.cronogramas.each do |s| %>	   
 		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
 		    <%= f.error_notification %>
 		      <div class="form-inputs">

@@ -23,24 +23,19 @@ class CartaController < ApplicationController
 
   # POST /carta
   # POST /carta.json
-   def create
-    @interessado = Interessado.find(params[:interessado_id])
-    @cartum = @interessado.cartum.create(params[:cartum])
-    redirect_to interessado_path(@interessado)
-   end
-  /def create/
-    /@cartum = Cartum.new(cartum_params)/
+  def create
+    @cartum = Cartum.new(cartum_params)
 
-    /respond_to do |format|/
-     / if @cartum.save/
-      /  format.html { redirect_to @cartum, notice: 'Cartum was successfully created.' }/
-       / format.json { render action: 'show', status: :created, location: @cartum }/
-      /else/
-       / format.html { render action: 'new' }/
-        /format.json { render json: @cartum.errors, status: :unprocessable_entity }/
-      /end/
-    /end/
-  /end/
+    respond_to do |format|
+      if @cartum.save
+        format.html { redirect_to @cartum, notice: 'Cartum was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @cartum }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @cartum.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PATCH/PUT /carta/1
   # PATCH/PUT /carta/1.json
@@ -70,7 +65,7 @@ class CartaController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_cartum
       @cartum = Cartum.find(params[:id])
-     
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
