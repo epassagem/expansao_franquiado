@@ -407,35 +407,30 @@
     
     
     <div class="col-xs-3"><!--Inicio 3 Terceira Coluna!-->
-     <div class="panel-group" id="accordion"><!--Inicia Carta Intenção!-->
-	  <div class="panel panel-default">
-	    <div class="panel-heading">
-	      <h4 class="panel-title">
-		<a data-toggle="collapse" data-parent="#accordion" href="#carta_inten">
-		  <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Carta de Intenção</h4>
-		</a>
-	      </h4>
-	    </div>
-
-	    <div id="carta_inten" class="panel-collapse collapse">
+      <div class="panel-group" id="accordion"><!--Inicia Carta Intenção!-->
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	    <a data-toggle="collapse" data-parent="#accordion" href="#carta_inten">
+	      <h4><span class="glyphicon glyphicon-sort-by-attributes-alt" style="margin-right:20px;"></span>Carta de Intenção</h4>
+	    </a>
+	    </h4>
+	  </div>
+	  <div id="carta_inten" class="panel-collapse collapse">
 		<!--Carta de Intenção!-->     
-		<div class="panel-body">
-		 <% @interessado.cartum.each do |r| %>
-		   <%= r.arquivo %>
-		   <%= r.interessado_id %>
-
-		   <%= form_for r do |f| %>
-	            <%= f.label :arquivo %><br>
-		    <%= f.file_field :arquivo %>	
-		    <%= f.submit %>
-		    
-
-		  <% end %>
-		<%end%>
-	 
-
-	</div><!--end panel panel-default!-->
-	</div><!--end Carta Intenção-->
+	    <div class="panel-body">
+	      <% @interessado.cartum.each do |r| %>
+		 <h4>Carta de Intenção</h4>
+		<%= r.arquivo %>
+		<%= form_for r do |f| %>
+		  <%= f.file_field :arquivo %>	
+		  <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+		<% end %>
+	      <%end%>
+	    </div>
+	</div>
+      </div><!--end panel panel-default!-->
+    </div><!--end Carta Intenção-->
 	
 	<div class="panel-group" id="accordion"><!--Documentos Fiscais e Financeiros!-->
 	  <div class="panel panel-default">
@@ -447,161 +442,31 @@
 	      </h4>
 	    </div>
 	    <div id="doc_fiscais" class="panel-collapse collapse">
-		<!--D!-->     
+		<!--Documentos Fiscais!-->     
 		<div class="panel-body">
-		  <% @interessado.doc_fiscais.each do |s| %>	   
-		   <%= simple_form_for s, :html => {:multipart => true}  do |f| %>
-		    <%= f.error_notification %>
-		      <div class="form-inputs">
-			<label>RG</label>
-		       <%= f.file_field :rg %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>CPF</label>
-		       <%= f.file_field :cpf %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Serasa</label>
-		       <%= f.file_field :serasa %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>FPC</label>
-		       <%= f.file_field :fpc %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Bens Imobiliários</label>
-		       <%= f.file_field :bens_imob %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Imposto de Renda Pessoa Física</label>
-		       <%= f.file_field :imposto_renda_pf %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Imposto de Renda Pessoa Jurídica</label>
-		       <%= f.file_field :imposto_renda_pj %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Comprovante de Residência</label>
-		       <%= f.file_field :comprovante_resid %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Certidão de Casamento</label>
-		       <%= f.file_field :certidao_casamento %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <!--Dados Sócios!-->
-		      <div class="form-inputs">
-			<label>RG Sócio</label>
-		       <%= f.file_field :socio_g %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>CPF Sócio</label>
-		       <%= f.file_field :socio_cpf %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Serasa Sócio</label>
-		       <%= f.file_field :socio_serasa %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>FPC Sócio</label>
-		       <%= f.file_field :socio_fpc %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Bens Imobiliários Sócio</label>
-		       <%= f.file_field :socio_bens_imob %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Imposto de Renda Pessoa Física Sócio</label>
-		       <%= f.file_field :socio_imposto_renda_pf %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Imposto de Renda Pessoa Jurídica Sócio</label>
-		       <%= f.file_field :socio_imposto_renda_pj %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Comprovante de Residência Sócio</label>
-		       <%= f.file_field :socio_comprovante_resid %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		      
-		      <div class="form-inputs">
-			<label>Certidão de Casamento Sócio</label>
-		       <%= f.file_field :socio_certidao_casamento %>
-		      </div>
-		      <div class="form-actions">
-			<%= f.button :submit %>
-		      </div>
-		   <% end %>
-		  <% end %>	     
+		  <% @interessado.doc_fiscais.each do |r| %>
+		    <h5>RG</h5>
+		    <%= r.rg %>
+		    <%= form_for r do |f| %>
+		      <%= f.file_field :rg%>	
+		      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+		    <% end %>
+		  <%end%>
+		   <hr>
+		  <% @interessado.doc_fiscais.each do |r| %>
+		    <h5>CPF</h5>
+		    <%= r.cpf %>
+		    <%= form_for r do |f| %>
+		      <%= f.file_field :cpf%>	
+		      <%= f.submit :value => "Salvar",  :class => 'btn btn-primary' %>
+		    <% end %>
+		  <%end%>
+		   <hr>
+		   
 	       </div>
 	    </div>
 	</div><!--end panel panel-default!-->
-	</div><!--end Dados Fiscais e Financeiros-->
+      </div><!--end Dados Fiscais e Financeiros-->
 	
 	<div class="panel-group" id="accordion"><!--Inicia Redação!-->
 	  <div class="panel panel-default">

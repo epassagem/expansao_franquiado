@@ -14,9 +14,13 @@ class InteressadosController < ApplicationController
    
   if @interessado.cartum.empty?
     @cartum = @interessado.cartum.build
-        @cartum.save
-     
-    end
+    @cartum.save   
+  end
+  
+  if @interessado.doc_fiscais.empty?
+    @doc_fiscais = @interessado.doc_fiscais.build
+    @doc_fiscais.save   
+  end
     
        
 

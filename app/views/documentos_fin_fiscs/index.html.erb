@@ -1,0 +1,31 @@
+<h1>Listing documentos_fin_fiscs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome doc</th>
+      <th>Arquivo</th>
+      <th>Interessado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @documentos_fin_fiscs.each do |documentos_fin_fisc| %>
+      <tr>
+        <td><%= documentos_fin_fisc.nome_doc %></td>
+        <td><%= documentos_fin_fisc.arquivo %></td>
+        <td><%= documentos_fin_fisc.interessado_id %></td>
+        <td><%= link_to 'Show', documentos_fin_fisc %></td>
+        <td><%= link_to 'Edit', edit_documentos_fin_fisc_path(documentos_fin_fisc) %></td>
+        <td><%= link_to 'Destroy', documentos_fin_fisc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Documentos fin fisc', new_documentos_fin_fisc_path %>

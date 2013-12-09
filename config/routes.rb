@@ -1,4 +1,6 @@
 Expansao::Application.routes.draw do
+  resources :documentos_fin_fiscs
+
   	 resources :interessados
   	 resources :aprov_estabelecimentos
 

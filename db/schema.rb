@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206143755) do
+ActiveRecord::Schema.define(version: 20131209174209) do
 
   create_table "aprov_estabelecimentos", force: true do |t|
     t.boolean  "estatus"
@@ -65,6 +65,14 @@ ActiveRecord::Schema.define(version: 20131206143755) do
     t.boolean  "estatus"
     t.string   "arquivo"
     t.string   "tipo"
+    t.integer  "interessado_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "documentos_fin_fiscs", force: true do |t|
+    t.string   "nome_doc"
+    t.string   "arquivo"
     t.integer  "interessado_id"
     t.datetime "created_at"
     t.datetime "updated_at"

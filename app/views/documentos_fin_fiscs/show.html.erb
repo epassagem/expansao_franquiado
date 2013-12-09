@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome doc:</strong>
+  <%= @documentos_fin_fisc.nome_doc %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @documentos_fin_fisc.arquivo %>
+</p>
+
+<p>
+  <strong>Interessado:</strong>
+  <%= @documentos_fin_fisc.interessado_id %>
+</p>
+
+<%= link_to 'Edit', edit_documentos_fin_fisc_path(@documentos_fin_fisc) %> |
+<%= link_to 'Back', documentos_fin_fiscs_path %>
