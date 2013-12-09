@@ -7,5 +7,9 @@ class CreateCarta < ActiveRecord::Migration
 
       t.timestamps
     end
+
+	add_index(:carta, :interessado_id)
+
+
   end
 end

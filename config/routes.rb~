@@ -1,5 +1,5 @@
 Expansao::Application.routes.draw do
-  	 resources :interessados
+  	 resources :interessados do
   	 resources :aprov_estabelecimentos
 
 	  resources :oprov_proj_arqus
@@ -32,7 +32,7 @@ Expansao::Application.routes.draw do
 
 	  resources :carta
 
- 
+  end
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
